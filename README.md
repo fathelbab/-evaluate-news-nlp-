@@ -9,7 +9,7 @@ Use the package manager [npm](https://npmjs.com) to install dependencies.
 ```bash
 npm install
 ```
-
+Create .env at the root directory and make 3 variables MC_API_KEY, MC_BASE_URL, PORT
 ## Usage
 
 All scripts can be found in package.json

@@ -1,12 +1,12 @@
+require('dotenv').config();
 var path = require('path')
-require('dotenv').config({path: __dirname + '/.env'});
 const fetch = require('node-fetch');
 const express = require('express')
 const cors = require ('cors')
 
-const PORT = '8082'
-const meaningCloudBaseUrl = 'https://api.meaningcloud.com/sentiment-2.1'
-const meaningcloudApiKey = '6dc0a7a29ccc99ce71a4e32b0dd98cb5'
+const PORT = process.env.PORT
+const meaningCloudBaseUrl = process.env.MC_BASE_URL
+const meaningcloudApiKey = process.env.MC_API_KEY
 let incomingURL = []
 
 
@@ -15,7 +15,6 @@ app.use(cors())
 app.use(express.json())
 
 
-console.log(require('dotenv').config())
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
