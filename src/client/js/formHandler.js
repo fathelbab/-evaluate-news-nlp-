@@ -1,7 +1,7 @@
 import {validateUrl} from './urlValidation';
 import "@babel/polyfill";
 
-
+const PostApiPath = 'http://localhost:8082/add-url';
 
 // this function handles the post api call 
 const sendUrl = async (url , body ) => {
@@ -43,7 +43,7 @@ export function onPressHandler() {
         
             console.log('send the link')
 
-            sendUrl('http://localhost:8082/add-url', {urlValue})
+            sendUrl(PostApiPath , {urlValue})
 
             .then(function(response) {
             document.getElementById("text").innerHTML = `text: ${response.text}`;

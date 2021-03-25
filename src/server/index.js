@@ -4,8 +4,10 @@ const fetch = require('node-fetch');
 const express = require('express')
 const cors = require ('cors')
 
-
-let urlInput = []
+const PORT = '8082'
+const meaningCloudBaseUrl = 'https://api.meaningcloud.com/sentiment-2.1'
+const meaningcloudApiKey = '6dc0a7a29ccc99ce71a4e32b0dd98cb5'
+let incomingURL = []
 
 
 const app = express()
@@ -28,7 +30,7 @@ app.post('/add-url', async (req, res) => {
      // loggin it to the console
      console.log(incomingURL)
 
-    const builtApiUrl = `${process.env.MC_BASE_URL}?key=${process.env.MC_API_KEY}&url=${incomingURL}&lang=en`
+    const builtApiUrl = `${meaningCloudBaseUrl}?key=${meaningcloudApiKey}&url=${incomingURL}&lang=en`
     console.log("trying to build the api");
     console.log(builtApiUrl);
     try {
@@ -60,8 +62,8 @@ app.post('/add-url', async (req, res) => {
 
   
     
-    app.listen(process.env.PORT, (error) => {
-        console.log(`Server listening on port ${process.env.PORT}!`)
+    app.listen(PORT, (error) => {
+        console.log(`Server listening on port ${PORT}!`)
     })
     
 
