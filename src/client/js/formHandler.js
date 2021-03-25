@@ -1,7 +1,7 @@
 import {validateUrl} from './urlValidation';
 import "@babel/polyfill";
 
-const PostApiPath = 'http://localhost:8082/add-url';
+const PostApiPath = 'http://localhost:5000/add-url';
 
 // this function handles the post api call 
 const sendUrl = async (url , body ) => {

@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const express = require('express')
 const cors = require ('cors')
 
-const PORT = '8082'
+const PORT = '5000'
 const meaningCloudBaseUrl = 'https://api.meaningcloud.com/sentiment-2.1'
 const meaningcloudApiKey = '6dc0a7a29ccc99ce71a4e32b0dd98cb5'
 let incomingURL = []
@@ -62,7 +62,7 @@ app.post('/add-url', async (req, res) => {
 
   
     
-    app.listen(PORT, (error) => {
+    app.listen(process.env.PORT || PORT, (error) => {
         console.log(`Server listening on port ${PORT}!`)
     })
     
